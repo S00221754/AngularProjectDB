@@ -1,0 +1,2 @@
+
+connection string: mongodb+srv://Ca4Test:ca4tester@cluster0.ery1poh.mongodb.net/test
