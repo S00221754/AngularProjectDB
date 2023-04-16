@@ -11,6 +11,6 @@ try {
   console.error(e);
 }
 
-let db = conn.db("wp1");
+let db = conn.db("game_wishlist");
 
 export default db;
