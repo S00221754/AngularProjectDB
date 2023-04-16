@@ -30,7 +30,7 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   let collection = await db.collection("games");
   let newDocument = req.body;
-  newDocument.date = new Date();
+  //newDocument.date = new Date();
   let result = await collection.insertOne(newDocument);
   res.send(result).status(204);
 });
@@ -43,7 +43,7 @@ router.delete("/:id", async (req, res) => {
 
   const collection = db.collection("games");
   let result = await collection.deleteOne(query);
-
+  
   res.send(result).status(200);
 });
 
