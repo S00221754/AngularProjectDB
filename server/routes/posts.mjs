@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   let id=req.params.id
   id=id.slice(1) //remove the colon at the start 
-  let collection = await db.collection("cars");
+  let collection = await db.collection("games");
   let query = {_id: ObjectId(id)};
 
   let result = await collection.findOne(query);
