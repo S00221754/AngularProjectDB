@@ -22,7 +22,7 @@ export class GamedealApiService {
   }
   
   private handleError (err:HttpErrorResponse) {
-    console.log('CarApiService: ' + err.message);
+    console.log('GameApiService: ' + err.message);
     return err.message;
   }
 }
