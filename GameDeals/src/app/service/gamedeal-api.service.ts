@@ -9,11 +9,11 @@ import { GameDeal } from '../interface/game';
 export class GamedealApiService {
 
   private _apiURL="https://www.cheapshark.com/api/1.0/";
-  private _deals="deals?"
+  private _dealKey="deals"
   constructor(private _http:HttpClient) { }
 
   getGameDeals():Observable<any>{
-    return this._http.get<GameDeal>(this._apiURL + this._deals)
+    return this._http.get<GameDeal>(this._apiURL + this._dealKey)
     .pipe(
       tap(data => console.log('game data/error') + JSON.stringify(data)
       ),

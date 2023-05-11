@@ -1,16 +1,18 @@
 <div class="container">
-    <div class="row bg-light mt-4 p-4" *ngIf="gamesData">
+  <div class="row bg-light mt-4 p-4" *ngIf="gamesData">
+    <div *ngFor="let game of gamesData">
       <div class="col-sm-4">
         <div>
-          <h3>{{gamesData.Error}}</h3>
+          <h3>{{game.Error}}</h3>
         </div>
       </div>
       <div class="col-sm-8">
-        <div *ngIf="gamesData.title">
-          <h1>{{gamesData.title}}</h1>
+        <div *ngIf="game.title">
+          <h1>{{game.title}}</h1>
         </div>
       </div>
     </div>
   </div>
-  
+</div>
+
   
