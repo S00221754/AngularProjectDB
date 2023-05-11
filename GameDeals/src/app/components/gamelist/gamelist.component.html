@@ -1,18 +1,20 @@
 <div class="container">
   <div class="row bg-light mt-4 p-4" *ngIf="gamesData">
-    <div *ngFor="let game of gamesData">
-      <div class="col-sm-4">
-        <div>
-          <h3>{{game.Error}}</h3>
-        </div>
-      </div>
-      <div class="col-sm-8">
-        <div *ngIf="game.title">
-          <h1>{{game.title}}</h1>
-        </div>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+  <div class="col"  *ngFor="let game of gamesData">
+    <div>
+      <h3>{{game.Error}}</h3>
+    </div>
+    <div class="card mt-3">
+      <img src="{{game.thumb}}" class="card-img-top img-fluid"> 
+      <div class="card-body">
+        <h5 class="card-title">{{game.title}}</h5>
+        <p class="card-text">{{game.normalPrice}} -> {{game.salePrice}}</p>
       </div>
     </div>
   </div>
 </div>
-
   
+<style>
+
+</style>
