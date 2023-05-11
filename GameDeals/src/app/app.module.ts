@@ -6,7 +6,15 @@ import { AppComponent } from './app.component';
 import { GamelistComponent } from './components/gamelist/gamelist.component';
 import { SearchgameComponent } from './components/searchgame/searchgame.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { Route, RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
+
+const routes:Routes=[
+  {path:'', component:GamelistComponent},
+  {path:'search', component:SearchgameComponent},
+  {path:'wishlist', component:WishlistComponent},
+  {path:'about', component:AboutComponent}
+]
 
 @NgModule({
   declarations: [
@@ -19,7 +27,8 @@ import { AboutComponent } from './components/about/about.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

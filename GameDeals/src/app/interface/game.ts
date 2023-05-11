@@ -3,4 +3,5 @@ export interface GameDeal {
     salePrice:string;
     normalPrice:string;
     thumb:string;
+    steamRatingPercent:string;
 }
