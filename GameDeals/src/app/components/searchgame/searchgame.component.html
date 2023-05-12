@@ -1,7 +1,21 @@
 <div class="container-fluid">
     <h1 class="text-center text-white">Search for Deal</h1>
     <form class="d-flex">
-      <input class="form-control me-2" type="search" #moviename  placeholder="Enter game title" aria-label="Find Deals">
-      <button class="btn btn-outline-success" type="submit" >Search</button>
+      <input class="form-control me-2" name="game-title" type="search" #gameTitle  placeholder="Enter game title" aria-label="Find Deals">
+      <button (click)="getGameByTitle(gameTitle.value)" class="btn btn-outline-success" type="submit" >Search</button>
     </form>
+  </div>
+
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    <div class="col"  *ngFor="let game of gamesData">
+      <div class="card mt-3" *ngIf="game.isOnSale == 1"> <!--Lists games that are on sale-->
+        <img src="{{game.thumb}}" class="card-img-top img-fluid">
+        <div class="card-body">
+            <h5 class="card-title">{{game.title}}</h5>
+            <p class="card-text"><s>${{game.normalPrice}}</s></p>
+            <p class="card-text" style="font-size: 20px;">${{game.salePrice}}</p>
+            <button class="btn btn-primary">Add to wish list</button>
+        </div>
+      </div>
+    </div>
   </div>

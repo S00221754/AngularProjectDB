@@ -5,4 +5,5 @@ export interface GameDeal {
     thumb:string;
     steamRatingPercent:number;
     dealRating:number;
+    isOnSale:number;
 }
