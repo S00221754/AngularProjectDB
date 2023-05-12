@@ -9,8 +9,9 @@ import { GameDeal } from '../interface/game';
 export class GamedealApiService {
 
   private _apiURL="https://www.cheapshark.com/api/1.0/";
-  private _dealKey="deals"
-  private _topGameKey="deals?metacritic=85"
+  private _dealKey="deals?"
+  private _topGameKey="metacritic=85"
+  private _titleKey="title="
   constructor(private _http:HttpClient) { }
 
   getBestDeals():Observable<any>{
@@ -22,14 +23,21 @@ export class GamedealApiService {
     )
   }
   getTopGamesOnSale():Observable<any>{
-    return this._http.get<GameDeal>(this._apiURL + this._topGameKey)
+    return this._http.get<GameDeal>(this._apiURL + this._dealKey + this._topGameKey)
     .pipe(
       tap(data => console.log('game data/error') + JSON.stringify(data)
       ),
       catchError(this.handleError)
     )
   }
-  
+  getGameByTitle(gameTitle:string):Observable<any>{
+    return this._http.get<GameDeal>(this._apiURL + this._dealKey + this._titleKey + gameTitle)
+    .pipe(
+      tap(data => console.log('game data/error') + JSON.stringify(data)
+      ),
+      catchError(this.handleError)
+    )
+  }
 
 
   private handleError (err:HttpErrorResponse) {
