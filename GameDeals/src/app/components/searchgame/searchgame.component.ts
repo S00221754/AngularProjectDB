@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { GameDeal } from 'src/app/interface/game';
+import { GameDeal, AddGame } from 'src/app/interface/game';
 import { GamedealApiService } from 'src/app/service/gamedeal-api.service';
+import { WishlistApiService } from 'src/app/service/wishlist-api.service';
 
 @Component({
   selector: 'app-searchgame',
@@ -9,8 +10,8 @@ import { GamedealApiService } from 'src/app/service/gamedeal-api.service';
 })
 export class SearchgameComponent {
   gamesData:GameDeal | any;
-
-  constructor(private _gamedealApiService:GamedealApiService){}
+  gameData:GameDeal | any;
+  constructor(private _gamedealApiService:GamedealApiService, private _wishlistApiService:WishlistApiService){}
 
   //string has a default parameter
   getGamesByTitle(gameTitle: string = '', lowerPrice?: string, upperPrice?: string, storeID?: string): boolean {
@@ -29,6 +30,17 @@ export class SearchgameComponent {
     this._gamedealApiService.getGamesByTitle(gameTitle, lower, upper, store).subscribe(gamesData => {
       this.gamesData = gamesData;
     });
+    return false;
+
+    
+  }
+    addToWishList(title:string, salePrice:string, normalPrice:string, thumb:string, steamRatingPercent:number, dealRating:number, isONSale:number):boolean{
+    let addGame:GameDeal
+    addGame= new AddGame(title,salePrice,normalPrice, thumb, steamRatingPercent, dealRating, isONSale)
+    this._wishlistApiService.addGame(addGame).subscribe(gameData =>
+      {
+        this.gameData= gameData
+      });
     return false;
   }
   
