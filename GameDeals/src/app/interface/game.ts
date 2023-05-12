@@ -9,6 +9,7 @@ export interface GameDeal {
 }
 export class AddGame implements GameDeal{
 
+    _id:string;
     title:string;
     salePrice:string;
     normalPrice:string;
@@ -17,8 +18,9 @@ export class AddGame implements GameDeal{
     dealRating:number;
     isOnSale:number;
 
-    constructor(title:string, salePrice:string, normalPrice:string, thumb:string, steamRatingPercent:number, dealRating:number, isONSale:number)
+    constructor(_id:string, title:string, salePrice:string, normalPrice:string, thumb:string, steamRatingPercent:number, dealRating:number, isONSale:number)
     {
+        this._id = _id
         this.title = title;
         this.salePrice= salePrice;
         this.normalPrice = normalPrice;

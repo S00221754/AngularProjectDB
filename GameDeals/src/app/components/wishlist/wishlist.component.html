@@ -1,1 +1,24 @@
-<p>wishlist works!</p>
+<div class="container">
+    <h1 class="text-center text-white">Wishlist</h1>
+    <div *ngFor="let game of gameData" class="mx-auto w-75">
+      <div class="card mb-3">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="{{game.thumb}}" class="card-img" [style.height.px]="gameimageheight"/>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 style="font-weight: bold;" class="card-title">{{game.title}}</h5>
+              <p class="card-text"><s>${{game.normalPrice}}</s></p>
+              <p class="card-text" style="font-size: 20px; font-weight: bold;">${{game.salePrice}}</p>
+              <div>
+                <button class="btn btn-primary btn-lg btn-block">Remove from list</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
