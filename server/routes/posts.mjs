@@ -37,7 +37,7 @@ router.post("/", async (req, res) => {
 // Delete an entry
 router.delete("/:id", async (req, res) => {
   let id=req.params.id
-  //id=id.slice(1) //remove the colon at the start 
+  id=id.slice(1) //remove the colon at the start 
 
   const query = { _id: ObjectId(id) };
 

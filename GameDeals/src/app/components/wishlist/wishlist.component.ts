@@ -11,6 +11,7 @@ export class WishlistComponent implements OnInit {
   gameData:GameDeal | any
   gameimagewidth = 300;
   gameimageheight = 200;
+  @Output() removeGameEvent = new EventEmitter<string>();
   constructor(private _wishListApiService:WishlistApiService){}
   ngOnInit() {
     this.getList();
@@ -22,7 +23,15 @@ export class WishlistComponent implements OnInit {
         this.gameData = gameData
       });
   }
+  removeGame(gameId: GameDeal) {
+    this._wishListApiService.deleteGame(gameId).subscribe((result: any) => {
+      console.log(result);
+      this.refreshList();
+    });
+    this.removeGameEvent.emit("car got deleted");
 
+  }
+  
   // addToWishList(title:string, salePrice:string, normalPrice:string, thumb:string, steamRatingPercent:number, dealRating:number, isONSale:number):boolean{
   //   let addGame:GameDeal
   //   addGame= new AddGame(title,salePrice,normalPrice, thumb, steamRatingPercent, dealRating, isONSale)
