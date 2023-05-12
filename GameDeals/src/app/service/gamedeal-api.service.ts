@@ -57,10 +57,3 @@ export class GamedealApiService {
     return err.message;
   }
 }
-/*
-store id 1 = steam
-store id 5 = gamestop
-store id 8 = origin
-store id 13 = uplay
-store id 25 = epic games store
-*/
