@@ -16,13 +16,13 @@
   </div>
 
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-    <div class="col"  *ngFor="let game of gamesData">
-      <div class="card mt-3" *ngIf="game.isOnSale == 1"> <!--Lists games that are on sale-->
-        <img src="{{game.thumb}}" class="card-img-top img-fluid">
+    <div class="col-md-4"  *ngFor="let game of gamesData">
+      <div class="card mt-3" *ngIf="game.isOnSale == 1" style="height: 400px;"> <!--Lists games that are on sale-->
+        <img src="{{game.thumb}}" class="card-img-top" style="height: 50%; object-fit: cover;">
         <div class="card-body">
             <h5 class="card-title">{{game.title}}</h5>
             <p class="card-text"><s>${{game.normalPrice}}</s></p>
-            <p class="card-text" style="font-size: 20px;">${{game.salePrice}}</p>
+            <p class="card-text" style="font-size: 50px;">${{game.salePrice}}</p>
             <button class="btn btn-primary"  (click)="addToWishList(game.title, game.salePrice, game.normalPrice, game.thumb, game.steamRatingPercent, game.dealRating, game.isOnSale)">Add to wish list</button>
         </div>
       </div>

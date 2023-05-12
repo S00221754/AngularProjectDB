@@ -5,8 +5,8 @@
         <h1 class="text-center text-white">Best Deals</h1>
         <div style="max-height: 700px; overflow-y: scroll; margin: 30px; border: 5px solid #4279a8; border-radius: 5px;" >
           <div *ngFor="let game of dealData">
-            <div class="card mb-3" *ngIf="game.dealRating >= 9.5">
-              <img src="{{game.thumb}}" class="card-img-top img-fluid"> 
+            <div class="card mb-3" *ngIf="game.dealRating >= 9.5" style="height: 700px;">
+              <img src="{{game.thumb}}" class="card-img-top img-fluid" style="height: 75%; object-fit: cover;" > 
               <div class="card-body">
                 <h5 class="card-title">{{game.title}}</h5>
                 <p class="card-text"><s>${{game.normalPrice}}</s></p>
@@ -21,8 +21,8 @@
         <h1 class="text-center text-white">Top Games on Sale</h1>
         <div style="max-height: 700px; overflow-y: scroll; margin: 30px; border: 5px solid #4279a8; border-radius: 5px;">
           <div *ngFor="let game of topGameData">
-            <div class="card mb-3">
-              <img src="{{game.thumb}}" class="card-img-top img-fluid"> 
+            <div class="card mb-3" style="height: 700px;">
+              <img src="{{game.thumb}}" class="card-img-top img-fluid" style="height: 75%; object-fit: cover;"> 
               <div class="card-body">
                 <h5 class="card-title">{{game.title}}</h5>
                 <p class="card-text"><s>${{game.normalPrice}}</s></p>
