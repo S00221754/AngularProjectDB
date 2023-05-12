@@ -7,18 +7,24 @@ import { GamedealApiService } from 'src/app/service/gamedeal-api.service';
   styleUrls: ['./gamelist.component.css']
 })
 export class GamelistComponent implements OnInit {
-  gamesData:GameDeal | any;
-  
+  dealData:GameDeal | any;
+  topGameData:GameDeal | any;
 
   constructor(private _gamedealApiService:GamedealApiService){}
 
   ngOnInit(){
-    this.getDeals();
+    this.getBestDeals();
+    this.getTopGamesSale()
   }
 
-  getDeals(){
-    this._gamedealApiService.getGameDeals().subscribe(gamesData =>
-      { this.gamesData = gamesData
+  getBestDeals(){
+    this._gamedealApiService.getBestDeals().subscribe(dealData =>
+      { this.dealData = dealData
+    });
+  }
+  getTopGamesSale(){
+    this._gamedealApiService.getTopGamesOnSale().subscribe(topGameData =>
+      { this.topGameData = topGameData
     });
   }
 }

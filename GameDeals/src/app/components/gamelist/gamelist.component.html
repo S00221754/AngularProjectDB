@@ -1,21 +1,45 @@
-<div class="container">
-  <div class="row bg-light mt-4 p-4" *ngIf="gamesData">
-<div class="row row-cols-1 g-4">
-  <div class="col"  *ngFor="let game of gamesData">
-    <div>
-      <h3>{{game.Error}}</h3>
+<div class="container bg-dark">
+  <div class="row">
+    <div class="col-md-6">
+      <h1 class="text-center text-white">Best Deals</h1>
+      <div style="max-height: 700px; overflow-y: scroll; margin: 30px;">
+        <div *ngFor="let game of dealData">
+          <div class="card mb-3" *ngIf="game.dealRating >= 9.5">
+            <img src="{{game.thumb}}" class="card-img-top img-fluid"> 
+            <div class="card-body">
+              <h5 class="card-title">{{game.title}}</h5>
+              <p class="card-text"><s>${{game.normalPrice}}</s></p>
+              <p class="card-text" style="font-size: 20px;">${{game.salePrice}}</p>
+              <button class="btn btn-primary">Add to wish list</button>
+            </div>  
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="card mt-3">
-      <img src="{{game.thumb}}" class="card-img-top img-fluid"> 
-      <div class="card-body">
-        <h5 class="card-title">{{game.title}}</h5>
-        <p class="card-text">{{game.normalPrice}} -> {{game.salePrice}}</p>
+    <div class="col-md-6">
+      <h1 class="text-center text-white">Top Games on Sale</h1>
+      <div style="max-height: 700px; overflow-y: scroll; margin: 30px;">
+        <div *ngFor="let game of topGameData">
+          <div class="card mb-3">
+            <img src="{{game.thumb}}" class="card-img-top img-fluid"> 
+            <div class="card-body">
+              <h5 class="card-title">{{game.title}}</h5>
+              <p class="card-text"><s>${{game.normalPrice}}</s></p>
+              <p class="card-text" style="font-size: 20px;">${{game.salePrice}}</p>
+              <button class="btn btn-primary">Add to wish list</button>
+            </div>    
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  <div class="d-flex justify-content-center">
+    <button class="btn btn-primary">Centered Button</button>
+  </div>
+  
 </div>
 
-  
-<style>
 
-</style>
+
+
+  
