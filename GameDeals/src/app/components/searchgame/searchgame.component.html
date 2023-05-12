@@ -1,4 +1,5 @@
-<div class="container-fluid">
+<div class="container" style="padding-bottom: 700px;">
+  <div class="container-fluid">
     <h1 class="text-center text-white">Search for Deal</h1>
     <form class="d-flex">
       <input class="form-control me-2" name="game-title" type="search" #gameTitle placeholder="Enter game title" aria-label="Find Deals">
@@ -24,8 +25,9 @@
             <h5 class="card-title">{{game.title}}</h5>
             <p class="card-text"><s>${{game.normalPrice}}</s></p>
             <p class="card-text" style="font-size: 20px;">${{game.salePrice}}</p>
-            <button class="btn btn-primary" (click)="addToWishList(game.title, game.salePrice, game.normalPrice, game.thumb, game.steamRatingPercent, game.dealRating, game.isOnSale)">Add to wish list</button>
+            <button class="btn btn-primary"  (click)="addToWishList(game.title, game.salePrice, game.normalPrice, game.thumb, game.steamRatingPercent, game.dealRating, game.isOnSale)">Add to wish list</button>
         </div>
       </div>
     </div>
   </div>
+</div>
