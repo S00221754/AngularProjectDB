@@ -33,6 +33,7 @@ export class GamelistComponent implements OnInit {
     addGame= new AddGame(title,salePrice,normalPrice, thumb, steamRatingPercent, dealRating, isOnSale)
     this._wishlistApiService.addGame(addGame).subscribe(gameData =>
       {
+        alert("Game has been added to Wishlist")
         this.gameData= gameData
       });
     return false;

@@ -1,7 +1,7 @@
 <div class="container"(removeGameEvent)="refreshList()" style="padding-bottom: 400px;">
     <h1 class="text-center text-white">Wishlist</h1>
     <div *ngFor="let game of gameData" class="mx-auto w-75">
-      <div class="card mb-3">
+      <div class="card mb-3" style="border: 5px solid #4279a8;" >
         <div class="row no-gutters">
           <div class="col-md-4">
             <img src="{{game.thumb}}" class="card-img" [style.height.px]="gameimageheight"/>

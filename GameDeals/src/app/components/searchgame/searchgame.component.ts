@@ -22,7 +22,7 @@ export class SearchgameComponent {
   
     // Check if at least one of the fields is not empty
     if (!gameTitle && !lower && !upper && !storeID) {
-      console.log('Please enter at least one search parameter.');
+      alert('Please enter at least one search parameter.');
       return false;
     }
     
@@ -39,6 +39,7 @@ export class SearchgameComponent {
     addGame= new AddGame(title,salePrice,normalPrice, thumb, steamRatingPercent, dealRating, isOnSale)
     this._wishlistApiService.addGame(addGame).subscribe(gameData =>
       {
+        alert("Game has been added to wishlist")
         this.gameData= gameData
       });
     return false;
