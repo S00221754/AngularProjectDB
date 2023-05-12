@@ -9,8 +9,8 @@ import { WishlistApiService } from 'src/app/service/wishlist-api.service';
   styleUrls: ['./searchgame.component.css']
 })
 export class SearchgameComponent {
-  gamesData:GameDeal | any;
-  gameData:GameDeal | any;
+  gamesData:GameDeal | any; //for list of games
+  gameData:GameDeal | any; //for adding to wishlist
   constructor(private _gamedealApiService:GamedealApiService, private _wishlistApiService:WishlistApiService){}
 
   //string has a default parameter
