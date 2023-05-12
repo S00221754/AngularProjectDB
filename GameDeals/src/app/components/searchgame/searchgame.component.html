@@ -1,8 +1,18 @@
 <div class="container-fluid">
     <h1 class="text-center text-white">Search for Deal</h1>
     <form class="d-flex">
-      <input class="form-control me-2" name="game-title" type="search" #gameTitle  placeholder="Enter game title" aria-label="Find Deals">
-      <button (click)="getGameByTitle(gameTitle.value)" class="btn btn-outline-success" type="submit" >Search</button>
+      <input class="form-control me-2" name="game-title" type="search" #gameTitle placeholder="Enter game title" aria-label="Find Deals">
+      <input class="form-control me-2" name="lower-price" type="number" #lowerPrice placeholder="Enter lower price" aria-label="Lower Price">
+      <input class="form-control me-2" name="upper-price" type="number" #upperPrice placeholder="Enter upper price" aria-label="Upper Price">
+      <select class="form-select" name="store-id" #storeId>
+        <option value="">All stores</option>
+        <option value="1">Steam</option>
+        <option value="5">GameStop</option>
+        <option value="8">Origin</option>
+        <option value="13">Uplay</option>
+        <option value="25">Epic Games</option>
+      </select>
+      <button (click)="getGamesByTitle(gameTitle.value, lowerPrice.value, upperPrice.value, storeId.value)" class="btn btn-outline-success" type="submit">Search</button>
     </form>
   </div>
 

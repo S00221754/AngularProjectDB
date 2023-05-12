@@ -30,14 +30,26 @@ export class GamedealApiService {
       catchError(this.handleError)
     )
   }
-  getGameByTitle(gameTitle:string):Observable<any>{
-    return this._http.get<GameDeal>(this._apiURL + this._dealKey + this._titleKey + gameTitle)
+  //This allows the ability to filter out games by price and store.
+  getGamesByTitle(gameTitle: string, lowerPrice?: number, upperPrice?: number, storeID?: number): Observable<any>{
+    let url = this._apiURL + this._dealKey + this._titleKey + gameTitle;
+    if (lowerPrice != null) {
+      url += "&lowerPrice=" + lowerPrice;
+    }
+    if (upperPrice != null) {
+      url += "&upperPrice=" + upperPrice;
+    }
+    if (storeID != null) {
+      url += "&storeID=" + storeID;
+    }
+    return this._http.get<GameDeal>(url)
     .pipe(
       tap(data => console.log('game data/error') + JSON.stringify(data)
       ),
       catchError(this.handleError)
     )
   }
+  
 
 
   private handleError (err:HttpErrorResponse) {
@@ -45,3 +57,10 @@ export class GamedealApiService {
     return err.message;
   }
 }
+/*
+store id 1 = steam
+store id 5 = gamestop
+store id 8 = origin
+store id 13 = uplay
+store id 25 = epic games store
+*/
