@@ -34,9 +34,9 @@ export class SearchgameComponent {
 
     
   }
-    addToWishList(title:string, salePrice:string, normalPrice:string, thumb:string, steamRatingPercent:number, dealRating:number, isONSale:number):boolean{
+    addToWishList(title:string, salePrice:string, normalPrice:string, thumb:string, steamRatingPercent:number, dealRating:number, isOnSale:number):boolean{
     let addGame:GameDeal
-    addGame= new AddGame(title,salePrice,normalPrice, thumb, steamRatingPercent, dealRating, isONSale)
+    addGame= new AddGame(title,salePrice,normalPrice, thumb, steamRatingPercent, dealRating, isOnSale)
     this._wishlistApiService.addGame(addGame).subscribe(gameData =>
       {
         this.gameData= gameData
