@@ -32,16 +32,6 @@ export class WishlistComponent implements OnInit {
 
   }
   
-  // addToWishList(title:string, salePrice:string, normalPrice:string, thumb:string, steamRatingPercent:number, dealRating:number, isONSale:number):boolean{
-  //   let addGame:GameDeal
-  //   addGame= new AddGame(title,salePrice,normalPrice, thumb, steamRatingPercent, dealRating, isONSale)
-  //   this._wishListApiService.addGame(addGame).subscribe(gameData =>
-  //     {
-  //       this.gameData= gameData
-  //     });
-  //   this.getList();
-  //   return false;
-  // }
   refreshList(){
     this.getList();
   }
