@@ -17,7 +17,7 @@
 
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
     <div class="col-md-4"  *ngFor="let game of gamesData">
-      <div class="card mt-3" *ngIf="game.isOnSale == 1" style="height: 400px;"> <!--Lists games that are on sale-->
+      <div class="card mt-3" *ngIf="game.isOnSale == 1" style="height: 500px;"> <!--Lists games that are on sale-->
         <img src="{{game.thumb}}" class="card-img-top" style="height: 50%; object-fit: cover;">
         <div class="card-body">
             <h5 class="card-title">{{game.title}}</h5>
