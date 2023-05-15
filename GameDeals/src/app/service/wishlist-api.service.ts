@@ -7,8 +7,7 @@ import { GameDeal } from '../interface/game';
 })
 export class WishlistApiService {
 
-  private _siteURL="http://localhost:5050/games/"
-
+  public _siteURL="http://54.73.232.250:5050/games/";
   constructor(private _http:HttpClient) { }
 
   getWishListItem():Observable<any>{
@@ -38,7 +37,7 @@ export class WishlistApiService {
     )
   }
   private handleError (err:HttpErrorResponse) {
-    console.log('CarApiService: ' + err.message);
+    console.log('WishlistAPIService: ' + err.message);
     return err.message;
   }
 }
